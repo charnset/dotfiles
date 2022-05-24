@@ -38,3 +38,8 @@ let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-html', 'coc-css'
 
 """ale
 let g:ale_ignore_lsp = 1
+
+"""coc
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
