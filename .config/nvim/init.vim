@@ -34,12 +34,7 @@ let g:airline_theme='molokai'
 let g:airline_powerline_fonts = 1
 
 """coc
-let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-html', 'coc-css', 'coc-pyright']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-html', 'coc-css', 'coc-pyright', 'coc-clangd', 'coc-sh']
 
 """ale
 let g:ale_ignore_lsp = 1
-
-"""coc
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-

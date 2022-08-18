@@ -22,7 +22,14 @@ fi
 # download neovim & vim-plug
 if ! command -v nvim > /dev/null; then
   echo "Installing neovim & vim-plug ..."
-  sudo apt install neovim
+  # neovim: version 0.7.2 https://github.com/neovim/neovim/releases/tag/v0.7.2
+  wget https://github.com/neovim/neovim/releases/download/v0.7.2/nvim-linux64.tar.gz
+  tar xzvf nvim-linux64.tar.gz
+  printf "\n\n# Export Neovim.\nexport PATH=\"$HOME/nvim-linux64/bin:\$PATH\"" >> .bashrc
+  # vim-plug: https://github.com/junegunn/vim-plug
   sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  source ~/.bashrc
 fi
+
+# to make sure, do run "source ~/.bashrc" every time after "yadm bootstrap"
